@@ -8,8 +8,8 @@ import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import org.w3c.dom.Document;
 
-import javax.swing.text.Document;
 import javax.swing.text.Element;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -96,7 +96,7 @@ public class ExternalExample {
 
     public String getData(String nodeName) {
         DocumentBuilder dBuilder;
-        Document doc = null;
+        org.w3c.dom.Document doc = null;
         File fXmlFile = new File("C:\\Users\\trollbot\\Desktop\\1.1\\PlaywrightAutomation\\src\\test\\java\\Tests\\ExternalFilerExample\\testConfig.xml");
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         try {
