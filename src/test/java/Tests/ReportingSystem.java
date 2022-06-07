@@ -34,20 +34,17 @@ public class ReportingSystem {
     @Description("Using my data to verify a bmi result")
     public void Test01_VerifyResult() {
 
-        try{
+        try {
             update_text(page.locator("#weight"), myWeight);
-
             update_text(page.locator("#hight"), myHeight);
             click(page.locator("#calculate_data"));
             String expectedResult = "29";
             String actualResult = getAttribute(page.locator("#bmi_result"));
             System.out.println(actualResult);
             verifyEquals(actualResult, expectedResult);
-        }
-        catch (Exception e )
-        {
+        } catch (Exception | AssertionError e) {
             saveScreenShot();
-            fail("Test Failed: ",e);
+            fail("Test Failed: ", e);
         }
 
     }
@@ -72,12 +69,10 @@ public class ReportingSystem {
         Assert.assertEquals(actual, expected);
     }
 
-    @Attachment(value = "Page Screen-Shot",type = "img/png")
-    public byte[] saveScreenShot()
-    {
+    @Attachment(value = "Page Screen-Shot", type = "image/png")
+    public byte[] saveScreenShot() {
         return page.screenshot();
     }
-
 
 
     @AfterClass
